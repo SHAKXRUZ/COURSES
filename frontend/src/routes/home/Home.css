@@ -1,0 +1,39 @@
+.home {
+    width: 1200px;
+    height: 650px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 20px auto;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.header {
+    width: 100%;
+    padding: 20px 0px 20px 20px;
+    background-color: dodgerblue;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.header_item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header_list {
+    list-style-type: none;
+}
+
+.home_link {
+    color: aqua;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.home_link:hover {
+    transition: .5s;
+    color: blue;
+}
+
+.home_routes {
+    padding: 20px;
+}

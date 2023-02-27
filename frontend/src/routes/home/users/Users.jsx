@@ -1,5 +1,5 @@
 import "./Users.css";
 const Users = () => {
-  return <div>Users</div>;
+  return <div className="users"></div>;
 };
 export default Users;
