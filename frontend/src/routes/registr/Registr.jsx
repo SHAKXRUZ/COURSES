@@ -1,8 +1,32 @@
 import "./Registr.css";
+
 const Registr = () => {
+  const registr = (e) => {
+    e.preventDefault();
+    let { username, email, password } = e.target;
+    let registr_user = {
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    };
+    // console.log(registr_user);
+    fetch("http://localhost:3000/registr_users", {
+      method: "POST",
+      body: JSON.stringify(registr_user),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert(data.msg);
+        window.location = "/login";
+      });
+  };
+
   return (
     <div className="registr">
-      <form className="form_registr">
+      <form onSubmit={(e) => registr(e)} className="form_registr">
         <div className="form_registr_div">
           <label form="username" className="form_registr_label">
             Username:
