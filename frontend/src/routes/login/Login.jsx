@@ -1,8 +1,32 @@
 import "./Login.css";
 const Login = () => {
+  const logins = (e) => {
+    e.preventDefault();
+    let { email, password } = e.target;
+    let login_user = {
+      email: email.value,
+      password: password.value,
+    };
+    fetch("http://localhost:3000/login_users", {
+      method: "POST",
+      body: JSON.stringify(login_user),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert(data.msg);
+        if (data.msg === "Success!") {
+          localStorage.setItem("token", data.token);
+          window.location = "/home";
+        }
+      });
+  };
+
   return (
     <div className="login">
-      <form className="form_login">
+      <form onSubmit={(e) => logins(e)} className="form_login">
         <div className="form_login_div">
           <label for="email" className="form_login_label">
             Email:

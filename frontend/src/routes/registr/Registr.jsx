@@ -9,7 +9,6 @@ const Registr = () => {
       email: email.value,
       password: password.value,
     };
-    // console.log(registr_user);
     fetch("http://localhost:3000/registr_users", {
       method: "POST",
       body: JSON.stringify(registr_user),
