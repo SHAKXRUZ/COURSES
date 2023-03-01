@@ -19,7 +19,12 @@ const Login = () => {
         alert(data.msg);
         if (data.msg === "Success!") {
           localStorage.setItem("token", data.token);
-          window.location = "/home";
+          if (localStorage.getItem("token")) {
+            window.location = "/home";
+          } else {
+            alert("Token not available!");
+            window.location = "/login";
+          }
         }
       });
   };

@@ -43,17 +43,18 @@ app.post("/registr_users", (req, res) => {
 app.post("/login_users", (req, res) => {
   const { email, password, username, id } = req.body;
   let users = read_file("users.json");
-  let findUserEmail = users.find((e) => e.email !== email);
-  let findUserPassword = users.find((e) => e.password !== password);
-  if (findUserEmail) {
+  let findUserEmail = users.find((e) => e.email === req.body.email);
+  let findUserPassword = users.find((e) => e.password === req.body.password);
+  if (!findUserEmail) {
     return res.status(401).send({
       msg: "Email not found!",
     });
-  } else if (findUserPassword) {
+  } else if (!findUserPassword) {
     return res.status(401).send({
       msg: "Password error!",
     });
   }
+
   let psw = bcrypt.compare(password, email);
   if (psw) {
     let token = jwt.sign(
