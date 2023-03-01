@@ -4,6 +4,9 @@ import { Route } from "react-router-dom";
 import Courses from "./courses/Courses";
 import Users from "./users/Users";
 const home = () => {
+  const logOut = () => {
+    localStorage.clear();
+  };
   return (
     <div className="home">
       <header className="header">
@@ -19,7 +22,7 @@ const home = () => {
             </Link>
           </li>
           <li className="header_list">
-            <Link className="home_link" to="/">
+            <Link onClick={() => logOut()} className="home_link" to="/">
               LogAut
             </Link>
           </li>
