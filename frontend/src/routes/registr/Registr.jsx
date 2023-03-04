@@ -1,5 +1,4 @@
 import "./Registr.css";
-
 const Registr = () => {
   const registr = (e) => {
     e.preventDefault();
@@ -9,7 +8,7 @@ const Registr = () => {
       email: email.value,
       password: password.value,
     };
-    fetch("http://localhost:3000/registr_users", {
+    fetch("http://localhost:4000/registr_users", {
       method: "POST",
       body: JSON.stringify(registr_user),
       headers: {

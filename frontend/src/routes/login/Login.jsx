@@ -7,7 +7,7 @@ const Login = () => {
       email: email.value,
       password: password.value,
     };
-    fetch("http://localhost:3000/login_users", {
+    fetch("http://localhost:4000/login_users", {
       method: "POST",
       body: JSON.stringify(login_user),
       headers: {
