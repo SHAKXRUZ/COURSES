@@ -1,8 +1,26 @@
+.users_header {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 10px 0px;
+    gap: 25px;
+}
+
+.users_header_id {
+    width: 100px;
+}
+
+.users_header_username {
+    width: 500px;
+}
+
+.users_header_email {
+    width: 500px;
+}
+
 .users {
     width: 100%;
-    height: 550px;
+    height: 520px;
     overflow-y: auto;
-    border: 1px solid black;
 }
 
 .users::-webkit-scrollbar-thumb {
